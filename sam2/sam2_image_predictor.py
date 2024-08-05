@@ -38,12 +38,7 @@ class SAM2ImagePredictor:
         """
         super().__init__()
         self.model = sam_model
-        self._transforms = SAM2Transforms(
-            resolution=self.model.image_size,
-            mask_threshold=mask_threshold,
-            max_hole_area=max_hole_area,
-            max_sprinkle_area=max_sprinkle_area,
-        )
+        self._transforms = SAM2Transforms(resolution=self.model.image_size,mask_threshold=mask_threshold,max_hole_area=max_hole_area,max_sprinkle_area=max_sprinkle_area)
 
         # Predictor state
         self._is_image_set = False
